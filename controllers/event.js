@@ -23,7 +23,7 @@ try {
     console.log(error.message)
    return  res.status(500).json({
         success: false,
-        message: "something went wrong"
+        message: "Internal server error"
     });
 
     
