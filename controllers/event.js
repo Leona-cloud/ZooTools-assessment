@@ -1,11 +1,11 @@
 const Payload = require("../model/payload");
+const performAggregate = require("../utils/aggregate");
 
 
 
 const createEvents = async(req, res)=>{
 
     const payload = req.body;
-
 
 try {
     
@@ -14,6 +14,8 @@ try {
         device: payload.user_agent_parsed,
         country: payload.geo_ip.country
     });
+
+    await performAggregate();
 
     return res.status(200).json({
         success: true,
