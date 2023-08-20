@@ -15,7 +15,7 @@ try {
         country: payload.geo_ip.country
     });
 
-    await performAggregate();
+     performAggregate();
 
     return res.status(200).json({
         success: true,
