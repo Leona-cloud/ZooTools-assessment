@@ -1,17 +1,10 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
+const createEvents = require("../controllers/event-controller");
+const getMetrics = require("../controllers/metric-controller");
 
-const createEvents = require('../controllers/event');
-const getMetrics = require('../controllers/metric');
+router.post("/events", createEvents);
+router.get("/metrics", getMetrics);
 
-
-router.post('/events', createEvents);
-router.get('/metrics', getMetrics);
-
-
-
-
-
-
-module.exports = router
+module.exports = router;
