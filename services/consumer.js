@@ -1,7 +1,7 @@
 const Bull = require("bull");
 const Country = require("../model/country");
 const Device = require("../model/device");
-const TimeSeries = require("../model/timeSeries");
+const TimeSeries = require("../model/timeseries");
 
 const eventQueue = new Bull("eventQueue", `${process.env.redis}`);
 

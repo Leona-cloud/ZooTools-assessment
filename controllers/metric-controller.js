@@ -1,6 +1,6 @@
 const Country = require("../model/country");
 const Device = require("../model/device");
-const TimeSeries = require("../model/timeSeries");
+const TimeSeries = require("../model/timeseries");
 
 const getMetrics = async (req, res) => {
   try {
