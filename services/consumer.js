@@ -20,13 +20,15 @@ const eventConsumer = async (job) => {
       count: 1,
     });
     await countryExists.save();
-  }
-  let updateCountryCount = countryExists.count + 1;
+  }else{
+    let updateCountryCount = countryExists.count + 1;
   console.log(updateCountryCount);
   await countryExists.updateOne({ country: country }).set({
     count: updateCountryCount,
   });
 
+  }
+  
   console.log(countryExists, "here");
   // add to device count
 
@@ -49,12 +51,14 @@ const eventConsumer = async (job) => {
       count: 1,
     });
     await deviceExists.save();
-  }
-  let updateDeviceCount = deviceExists.count + 1;
+  }else{
+    let updateDeviceCount = deviceExists.count + 1;
   console.log(updateDeviceCount);
   await deviceExists.updateOne({ device: deviceType }).set({
     count: updateDeviceCount,
   });
+  }
+  
 
   console.log(deviceExists, "here");
 
@@ -77,12 +81,14 @@ const eventConsumer = async (job) => {
       totalOpens: 1,
     });
     await timestampExists.save();
-  }
-  let updateTimeCount = timestampExists.totalOpens + 1;
+  }else{
+    let updateTimeCount = timestampExists.totalOpens + 1;
   console.log(updateTimeCount);
   await timestampExists.updateOne({ time: formatTime }).set({
     totalOpens: updateTimeCount,
   });
+  }
+  
 
   console.log(timestampExists, "here");
 };
