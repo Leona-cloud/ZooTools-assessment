@@ -8,7 +8,7 @@ const timeSeriesSchema = new mongoose.Schema({
     },
     totalOpens: {
         type: Number,
-        default: 0
+        default: 1
     }
 
 });

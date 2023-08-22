@@ -16,8 +16,7 @@ const eventConsumer = async (job) => {
   let countryExists = await Country.findOne({ country: country });
   if (!countryExists) {
     countryExists = new Country({
-      country: country,
-      count: 1,
+      country: country
     });
     await countryExists.save();
   }else{
@@ -47,8 +46,7 @@ const eventConsumer = async (job) => {
   let deviceExists = await Device.findOne({ device: deviceType });
   if (!deviceExists) {
     deviceExists = new Device({
-      device: deviceType,
-      count: 1,
+      device: deviceType
     });
     await deviceExists.save();
   }else{
@@ -77,8 +75,7 @@ const eventConsumer = async (job) => {
   let timestampExists = await TimeSeries.findOne({ time: formatTime });
   if (!timestampExists) {
     timestampExists = new TimeSeries({
-      time: formatTime,
-      totalOpens: 1,
+      time: formatTime
     });
     await timestampExists.save();
   }else{
